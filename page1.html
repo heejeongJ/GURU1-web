@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>올리브영 온라인몰</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="사진/파비콘/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="사진/파비콘/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="사진/파비콘/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="사진/파비콘/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="사진/파비콘/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="사진/파비콘/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="사진/파비콘/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="사진/파비콘/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="사진/파비콘/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="사진/파비콘/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="사진/파비콘/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="사진/파비콘/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="사진/파비콘/favicon-16x16.png">
+<link rel="manifest" href="사진/파비콘/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="사진/파비콘/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<style>
+.header { width: 1280px; height: 60px;}
+
+  .login {color: black;	font-size: 12px;}
+	p {text-align: right;}
+	small {color: lightgray;}
+
+* {margin:0;padding:0;box-sizing:border-box;}
+ul, li {list-style:none;}
+
+
+.slidebox {max-width:1000px;margin:0 auto;position:relative;}
+.slidebox .slidelist {position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
+.slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;background-color:#fff;width:33%;transition:all 1s;}
+.slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
+.slidebox .slidelist .slideitem > a img {max-width:100%;}
+
+.slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+.slidebox .slide-control [class*="control"] label.prev {left:-50px;background:#ffffff url('사진/left.png') center center / 100% no-repeat;}
+.slidebox .slide-control [class*="control"] label.next {right:-50px;background:#ffffff url('사진/right.png') center center / 100% no-repeat;}
+
+[name="slide"] {display:none;}
+#slide01:checked ~ .slidelist .slideitem {left:0;}
+#slide02:checked ~ .slidelist .slideitem {left:-33%;}
+#slide03:checked ~ .slidelist .slideitem {left:-66%;}
+#slide04:checked ~ .slidelist .slideitem {left:-99%;}
+#slide05:checked ~ .slidelist .slideitem {left:-132%;}
+#slide06:checked ~ .slidelist .slideitem {left:-165%;}
+
+.slide-control [class*="control"] {display:none;}
+#slide01:checked ~ .slide-control .control01 {display:block;}
+#slide02:checked ~ .slide-control .control02 {display:block;}
+#slide03:checked ~ .slide-control .control03 {display:block;}
+#slide04:checked ~ .slide-control .control04 {display:block;}
+#slide05:checked ~ .slide-control .control05 {display:block;}
+#slide06:checked ~ .slide-control .control06 {display:block;}
+
+.healthylife {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 7%;
+    overflow: hidden;
+}
+
+.slideitem {
+  -webkit-animation: moveSlideshow 5s linear infinite; 
+  -moz-animation: moveSlideshow 5s linear infinite;
+  -o-animation: moveSlideshow 5s linear infinite;
+}
+
+.인기slidebox {max-width:1000px;margin:0 auto;position:relative;}
+.인기slidebox .인기slidelist {position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
+.인기slidebox .인기slidelist .인기slideitem {position:relative;display:inline-block;vertical-align:middle;background-color:#fff;width:100%;transition:all 1s;}
+.인기slidebox .인기slidelist .인기slideitem > a {display:block;width:auto;position:relative;}
+.인기slidebox .인기slidelist .인기slideitem > a img {max-width:100%;}
+
+.인기slidebox .인기slide-control [class*="인기control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+.인기slidebox .인기slide-control [class*="인기control"] label.인기prev {left:-50px;background:#ffffff url('사진/left.png') center center / 100% no-repeat;}
+.인기slidebox .인기slide-control [class*="인기control"] label.인기next {right:-50px;background:#ffffff url('사진/right.png') center center / 100% no-repeat;}
+
+[name="인기slide"] {display:none;}
+#인기slide01:checked ~ .인기slidelist .인기slideitem {left:0;}
+#인기slide02:checked ~ .인기slidelist .인기slideitem {left:-100%;}
+#인기slide03:checked ~ .인기slidelist .인기slideitem {left:-200%;}
+#인기slide04:checked ~ .인기slidelist .인기slideitem {left:-300%;}
+
+.인기slide-control [class*="인기control"] {display:none;}
+#인기slide01:checked ~ .인기slide-control .인기control01 {display:block;}
+#인기slide02:checked ~ .인기slide-control .인기control02 {display:block;}
+#인기slide03:checked ~ .인기slide-control .인기control03 {display:block;}
+#인기slide04:checked ~ .인기slide-control .인기control04 {display:block;}
+
+.popular {
+    width: 1000px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 0%;
+    overflow: hidden;
+}
+
+.인기slideitem {
+  -webkit-animation: moveSlideshow 5s linear infinite; 
+  -moz-animation: moveSlideshow 5s linear infinite;
+  -o-animation: moveSlideshow 5s linear infinite;
+}
+
+.배너slidebox {max-width:2000px;margin:0 auto;position:relative;}
+.배너slidebox .배너slidelist {width: 100%; left: 0px; top: 0px; z-index: -10;position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
+.배너slidebox .배너slidelist .배너slideitem {position:relative;display:inline-block; margin: 0px;vertical-align:middle;background-color:#ffffff;width:100%;transition:all 1s;}
+.배너slidebox .배너slidelist .배너slideitem > a {display:block;width:auto;position:relative;}
+.배너slidebox .배너slidelist .배너slideitem > a img {max-width:100%;}
+
+.배너slidebox .배너slide-control [class*="배너control"] label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+.배너slidebox .배너slide-control [class*="배너control"] label.배너prev {left:500px;top: 450px;background:#ffffff url('사진/left.png') center center / 100% no-repeat;}
+.배너slidebox .배너slide-control [class*="배너control"] label.배너next {right:1000px;top: 450px;background:#ffffff url('사진/right.png') center center / 100% no-repeat;}
+
+[name="배너slide"] {display:none;}
+#배너slide01:checked ~ .배너slidelist .배너slideitem {left:0;}
+#배너slide02:checked ~ .배너slidelist .배너slideitem {left:-100%;}
+#배너slide03:checked ~ .배너slidelist .배너slideitem {left:-200%;}
+#배너slide04:checked ~ .배너slidelist .배너slideitem {left:-300%;}
+
+.배너slide-control [class*="배너control"] {display:none;}
+#배너slide01:checked ~ .배너slide-control .배너control01 {display:block;}
+#배너slide02:checked ~ .배너slide-control .배너control02 {display:block;}
+#배너slide03:checked ~ .배너slide-control .배너control03 {display:block;}
+#배너slide04:checked ~ .배너slide-control .배너control04 {display:block;}
+
+.Banner {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.배너slideitem {
+  -webkit-animation: moveSlideshow 5s linear infinite; 
+  -moz-animation: moveSlideshow 5s linear infinite;
+  -o-animation: moveSlideshow 5s linear infinite;
+}
+
+        img.로고{
+          position: relative;
+          left: 270px;
+        }
+
+        .search{
+        height: 70px;
+        width: 300px;
+        float: center;
+        position: relative;
+        right: 30px;
+        }
+
+        .search input{
+        font-size: 13px;
+        width: 380px;
+        padding: 10px;
+        border-radius: 20px;
+        border-color: #a6cd48;
+        outline: none;
+        }
+
+        .search button{
+        width: 50px;
+        height: 0%;
+        border: 0px;
+        background: #ffffff;
+        outline: none;
+        top: -28px;
+        left: 200px;
+        position: relative;
+        color: #a6cd48;
+        }
+
+        .search img {width: 20px;}
+
+        .category {
+        list-style-type: none;
+        margin: 10px;
+        padding: 0px;
+        background-color: #ffffff;
+        outline: none;
+        }
+
+        ul.category:after{
+        width: 100%;
+        height: 5px;
+        content:'';
+        display: block;
+        clear:both;
+        }
+
+        .category li {
+        float: left;
+        position: relative;
+        left: 225px;
+        }
+        .category li a {
+        color: black;
+        text-align: center;
+        padding: 20px;
+        text-decoration: none;
+        }
+        .category li a:hover:not(.active) {
+        text-decoration: underline; color: #ff6666;
+        }
+        .카테고리 {margin: 50px;}
+
+.배너 {float: center;}
+   .배너 img {position: relative;}
+   .배너사진 {width: 120%; height: 500px; right: 180px; bottom: 0.3px;}
+   .배너 ul {
+          position: absolute;
+          left: 270px;
+          top: 200px;
+          list-style-type: none;
+          font-family: 'Montserrat';
+          font-weight: bold;
+          margin: 0;
+          padding: 0;
+          width: 200px;
+          background-color: #666666;
+          background-color: rgba( 102, 102, 102, 0.5 );
+          position: absolute;
+          z-index: 100;
+      }
+      .BC li a {
+          display: block;
+          color: #EEEEEE;
+          padding: 8px 16px;
+          text-decoration: none;
+          background-color: rgba(130, 130, 130, 0.5);
+          font-size: 13px;
+          text-align: left;
+      }
+      .배너 li a.active {
+          background-color: #222222;
+          color: white;
+          background-color: rgba(80, 80, 80, 0.5);
+          font-size: 13px;
+          text-align: left;
+      }
+      .배너 li a:hover {
+            background-color: #333333;
+          color: white;
+      }
+
+.event {margin: 30px;}
+.위클리스페셜 {margin: 30px;}
+
+.더보기메뉴 { width: 250px; font-size: 18px; color: gray; position: relative; left: 520px; bottom: 62px;}
+
+ .헬시라이프 {width: 1170px; height: 500px; margin: 30px;}
+}
+
+.인기행사 {width: 1170px; height: 800px; margin: 30px;}
+
+.f1 {
+    position: relative;
+    left: 300px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+}
+.f1:after{
+    content:'';
+    display: block;
+    clear:both;
+}
+.f2 {
+    float: left;
+}
+.f2 aaa {
+    padding-left: 30px;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 8px 10px;
+    text-decoration: none;
+}
+
+.footer p {text-align: left;}
+.footer img{float: left; padding-left: 55px; position: relative;left: 250px; top: 100px;}
+ .footer   div div{
+        display: inline-block;
+        border-bottom: none;
+        border-top: none;
+        font-size: 13px;
+        margin: 10px;
+        width: 280px;
+        height: 185px;
+    }
+    .b{
+        background-color: #FFFFFF;
+        
+        padding: 15px 20px;
+        font-size: 13px;
+
+        position: relative; left: 290px;
+       }
+
+</style>
+
+</head>
+
+<body>
+<center>
+<header class = "header">
+<p>
+<a class = "login" href="#회원가입" style="text-decoration: none;">회원가입</a>
+<small>|</small>
+<a class = "login" href="#로그인" style="text-decoration: none;">로그인</a>
+<small>|</small>
+<a class = "login" href="#장바구니" style="text-decoration: none;">장바구니</a>
+<small>|</small>
+<a class = "login" href="#주문배송" style="text-decoration: none;">주문배송</a>
+<small>|</small>
+<a class = "login" href="#고객센터" style="text-decoration: none;">고객센터</a>
+<small>|</small>
+<a class = "login" href="매장안내" style="text-decoration: none;">매장안내</a>
+<small>|</small>
+<a class = "login" href="Global" style="text-decoration: none;">Global</a>
+</p>
+</header>
+
+<a href="page1.html"><img class="로고" src="사진/올리브영 로고.png" width = "248" height="42" align="left"></a>
+
+<div class="search">
+    <input type="text" placeholder="  네일DAY💛 단5일간 추가할인">
+    <button><img src="사진/search.png"></button>
+</div>
+
+<div class="더보기메뉴">
+  <h5>관심매장소식 ▼  | 최근 본 상품 ▼</h5>
+</div>
+
+<hr>
+
+<ul class = "category">
+    <li><b><a class="카테고리" href="#카테고리">
+        <img src="사진/카테고리.png" width="20" height="20"> &nbsp;카테고리</a></b></li>
+    <li><b><a href="#오특">오특</a></b></li>
+    <li><b><a href="#신상">신상</a></b></li>
+    <li><b><a href="page2.html">랭킹</a></b></li>
+    <li><b><a href="#프리미엄관">프리미엄관</a></b></li>
+    <li><b><a href="#오늘드림">오늘드림</a></b></li>
+    <li><b><a href="#기획전">기획전</a></b></li>
+    <li><b><a href="#세일">세일</a></b></li>
+    <li><b><a href="page4.html">기프트카드</a></b></li>
+    <li><b><a href="#멤버십/쿠폰">멤버십/쿠폰</a></b></li>
+    <li><b><a href="#이벤트">이벤트</a></b></li>
+</ul>
+<hr>
+
+
+<div class="배너">
+  <div class="배너slidebox">
+  <input type="radio" name="배너slide" id="배너slide01" checked>
+  <input type="radio" name="배너slide" id="배너slide02">
+  <input type="radio" name="배너slide" id="배너slide03">
+  <input type="radio" name="배너slide" id="배너slide04">
+
+  <ul class="배너slidelist">
+    <li class="배너slideitem">
+      <a><img class="Banner" src="사진/배1.jpg"></a>
+    </li>
+    <li class="배너slideitem">
+      <a><img class="Banner" src="사진/배2.jpg"></a>
+    </li>
+    <li class="배너slideitem">
+      <a><img class="Banner" src="사진/배3.jpg"></a>
+    </li>
+    <li class="배너slideitem">
+      <a><img class="Banner" src="사진/배4.jpg"></a>
+    </li>
+    
+  </ul>
+  <div class="배너slide-control">
+    <div class="배너control01">
+      <label for="배너slide04" class="배너prev"></label>
+      <label for="배너slide02" class="배너next"></label>
+    </div>
+    <div class="배너control02">
+      <label for="배너slide01" class="배너prev"></label>
+      <label for="배너slide03" class="배너next"></label>
+    </div>
+    <div class="배너control03">
+      <label for="배너slide02" class="배너prev"></label>
+      <label for="배너slide04" class="배너next"></label>
+    </div>
+    <div class="배너control04">
+      <label for="배너slide03" class="배너prev"></label>
+      <label for="배너slide01" class="배너next"></label>
+    </div>
+  </div>
+ </div>
+
+
+	   <ul class="BC">
+      <li><a href="#기초화장품"> &nbsp;기초화장품</a></li>
+         <li><a href="#더모코스메틱"> &nbsp;더모코스메틱</a></li>
+         <li><a href="#메이크업 네일"> &nbsp;메이크업 네일</a></li>
+         <li><a href="#바디케어"> &nbsp;바디케어</a></li>
+         <li><a href="#헤어케어"> &nbsp;헤어케어</a></li>
+         <li><a href="#향수/디퓨저"> &nbsp;향수/디퓨저</a></li>
+         <li><a href="#미용소품"> &nbsp;미용소품</a></li>
+         <li><a href="#남성"> &nbsp;남성</a></li>
+         <li><a href="#건강/위생용품"> &nbsp;건강/위생용품</a></li>
+         <li><a href="#건강식품"> &nbsp;건강식품</a></li>
+         <li><a href="#일반식품"> &nbsp;일반식품</a></li>
+         <li><a href="#반려동물"> &nbsp;반려동물</a></li>
+         <li><a href="#베이비"> &nbsp;베이비</a></li>
+         <li><a href="#리빙/홈"> &nbsp;리빙/홈</a></li>
+         <li><a class="active" href="#AWARDS"> &nbsp;<img src="사진/트로피.png" width="13" height="13"> &nbsp; AWARDS</a></li>
+   </ul>
+   <br>
+</div>
+
+<div class="event">
+<img src="사진/7만원.jpg" width="570">
+<img src="사진/2만원.jpg" width="570">  
+</div>
+
+<div class = "위클리스페셜">
+  <h1>WEEKLY SPECIAL</h1>
+  <br>
+  <img src="사진/위클리1.jpg" width="1150">
+  <br>
+</div>
+
+
+<div class = "헬시라이프">
+  <br>
+	<h1>HEALTHY LIFE</h1>
+	<br>
+	<div class="slidebox">
+	<input type="radio" name="slide" id="slide01" checked>
+	<input type="radio" name="slide" id="slide02">
+	<input type="radio" name="slide" id="slide03">
+	<input type="radio" name="slide" id="slide04">
+	<input type="radio" name="slide" id="slide05">
+	<input type="radio" name="slide" id="slide06">
+	<ul class="slidelist">
+		<li class="slideitem">
+			<a><img class="healthylife" src="사진/slide01.jpg"></a>
+		</li>
+		<li class="slideitem">
+			<a><img class="healthylife" src="사진/slide02.jpg"></a>
+		</li>
+		<li class="slideitem">
+			<a><img class="healthylife" src="사진/slide03.jpg"></a>
+		</li>
+		<li class="slideitem">
+			<a><img class="healthylife" src="사진/slide04.jpg"></a>
+		</li>
+		<li class="slideitem">
+			<a><img class="healthylife" src="사진/slide05.jpg"></a>
+		</li>
+		<li class="slideitem">
+			<a><img class="healthylife" src="사진/slide06.jpg"></a>
+		</li>
+		
+	</ul>
+	<div class="slide-control">
+		<div class="control01">
+			<label for="slide04" class="prev"></label>
+			<label for="slide02" class="next"></label>
+		</div>
+		<div class="control02">
+			<label for="slide01" class="prev"></label>
+			<label for="slide03" class="next"></label>
+		</div>
+		<div class="control03">
+			<label for="slide02" class="prev"></label>
+			<label for="slide04" class="next"></label>
+		</div>
+		<div class="control04">
+			<label for="slide03" class="prev"></label>
+			<label for="slide05" class="next"></label>
+		</div>
+		<div class="control05">
+			<label for="slide04" class="prev"></label>
+			<label for="slide06" class="next"></label>
+		</div>
+		<div class="control06">
+			<label for="slide05" class="prev"></label>
+			<label for="slide01" class="next"></label>
+		</div>
+	</div>
+ </div>
+</div>
+
+<div class = "인기행사">
+  <br>
+  <h1>인기 행사만 모았어요!</h1>
+  <br>
+  <div class="인기slidebox">
+  <input type="radio" name="인기slide" id="인기slide01" checked>
+  <input type="radio" name="인기slide" id="인기slide02">
+  <input type="radio" name="인기slide" id="인기slide03">
+  <input type="radio" name="인기slide" id="인기slide04">
+
+  <ul class="인기slidelist">
+    <li class="인기slideitem">
+      <a><img class="popular" src="사진/인1.jpg"></a>
+    </li>
+    <li class="인기slideitem">
+      <a><img class="popular" src="사진/인2.jpg"></a>
+    </li>
+    <li class="인기slideitem">
+      <a><img class="popular" src="사진/인3.jpg"></a>
+    </li>
+    <li class="인기slideitem">
+      <a><img class="popular" src="사진/인4.jpg"></a>
+    </li>
+    
+  </ul>
+  <div class="인기slide-control">
+    <div class="인기control01">
+      <label for="인기slide04" class="인기prev"></label>
+      <label for="인기slide02" class="인기next"></label>
+    </div>
+    <div class="인기control02">
+      <label for="인기slide01" class="인기prev"></label>
+      <label for="인기slide03" class="인기next"></label>
+    </div>
+    <div class="인기control03">
+      <label for="인기slide02" class="인기prev"></label>
+      <label for="인기slide04" class="인기next"></label>
+    </div>
+    <div class="인기control04">
+      <label for="인기slide03" class="인기prev"></label>
+      <label for="인기slide01" class="인기next"></label>
+    </div>
+  </div>
+ </div>
+ <br>
+ <br>
+ <br>
+</div>
+
+
+<footer class="footer">
+   <hr>
+    <ul class="f1">
+      <li class="f2"><aaa href="#news">회사소개  &nbsp; &nbsp;| </aaa></li>
+      <li class="f2"><aaa href="#contact">채용안내  &nbsp; &nbsp;| </aaa></li>
+      <li class="f2"><aaa href="#about">가맹점 개설문의  &nbsp; &nbsp;| </aaa></li>
+      <li class="f2"><aaa href="#about">상품입점 및 제휴문의  &nbsp; &nbsp;|</aaa></li>
+      <li class="f2"><aaa href="#about">사이버 감사실  &nbsp; &nbsp;| </aaa></li>
+      <li class="f2"><aaa href="#about">고객센터</aaa></li>
+    </ul>
+    <hr>
+    <img src="사진/logo.png" alt="image" width="200">
+<div style="background-color: white;">
+<div>
+  <br><br>
+  <p><strong>씨제이올리브영 주식회사</strong></p>
+    <p>
+    대표이사 : 구창근 | 사업자등록번호 : 809-81-01574<br>
+    주소:(04323)서울특별시 용산구 한강대로 372, 24층<br> (동자동, ,KDB타워)<br>
+    호스팅사업자: CJ올리브네트윅스<br>
+    통신판매업신고번호 : 2019-서울용산-1428<br>
+    이메일 : oliveweb@cj.net<br>
+        <U>사업자 정보확인 ></U> <br></p>
+
+</div>
+<div><p>이용약관 법적고지</p>
+    <p><strong>개인정보처리방침</strong></p>
+    <p>청소년보호방침</p>
+    <p>영상전보처리기기운영/관리방침</p>
+    <p>이메일무단수집거부<br><br><br><br></p>
+</div>
+<div><p><strong>LG U+ 매매보호(에스크로)서비스</strong></p>
+    <p>
+    고객님은 안전거래를 위해 모든 결제시<br>
+    저희 쇼핑몰에서 가입한 LG U+ 전자 결제의<br>
+    매매보호(에스크로)서비스를 이용하실 수<br>
+    있습니다.<br>
+        <U>서비스 가입 사실 확인 ></U><br><br><br><br><br></p></div>
+<hr>
+
+  <span style="margin-top:20px;font-size:13px;" >&nbsp;정보보호 관리체계 ISMS 인증획득 | 인증범위 : 온라인 쇼핑몰 운영 (CJ올리브영) | 유효기간: 2020.12.02~2023.12.01 2017-2020 &nbsp;&nbsp;&nbsp;국가고객만족도(NCSI) 헬스앤뷰티전문점 업계 최초 4년 연속 1위</span>
+
+<hr>
+<p class="b"> Copyright &copy; CJ oliveYoung.All Rights Reserved.</p>
+</footer>
+
+</center>
+</body>
+</html>
