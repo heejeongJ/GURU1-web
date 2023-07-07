@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+     <title>올리브영 온라인몰</title>
+   <link rel="apple-touch-icon" sizes="57x57" href="사진/파비콘/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="사진/파비콘/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="사진/파비콘/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="사진/파비콘/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="사진/파비콘/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="사진/파비콘/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="사진/파비콘/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="사진/파비콘/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="사진/파비콘/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="사진/파비콘/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="사진/파비콘/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="사진/파비콘/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="사진/파비콘/favicon-16x16.png">
+<link rel="manifest" href="사진/파비콘/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="사진/파비콘/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<style type="text/css">
+.header { width: 1280px; height: 60px;}
+
+  .login {color: black;   font-size: 12px;}
+   p {text-align: right;}
+   small {color: lightgray;}
+
+* {margin:0;padding:0;box-sizing:border-box;}
+
+        img.로고{
+          position: relative;
+          left: 270px;
+        }
+
+        .search{
+        height: 70px;
+        width: 300px;
+        float: center;
+        position: relative;
+        right: 30px;
+        }
+
+        .search input{
+        font-size: 13px;
+        width: 380px;
+        padding: 10px;
+        border-radius: 20px;
+        border-color: #a6cd48;
+        outline: none;
+        }
+
+        .search button{
+        width: 50px;
+        height: 0%;
+        border: 0px;
+        background: #ffffff;
+        outline: none;
+        top: -28px;
+        left: 200px;
+        position: relative;
+        color: #a6cd48;
+        }
+
+        .search img {width: 20px;}
+
+        .category {
+        list-style-type: none;
+        margin: 10px;
+        padding: 0px;
+        background-color: #ffffff;
+        outline: none;
+        }
+
+        ul.category:after{
+        width: 100%;
+        height: 5px;
+        content:'';
+        display: block;
+        clear:both;
+        }
+
+        .category li {
+        float: left;
+        position: relative;
+        left: 225px;
+        }
+        .category li a {
+        color: black;
+        text-align: center;
+        padding: 20px;
+        text-decoration: none;
+        }
+        .category li a:hover:not(.active) {
+        text-decoration: underline; color: #ff6666;
+        }
+        .카테고리 {margin: 50px;}
+
+        .더보기메뉴 { width: 250px; font-size: 18px; color: gray; position: relative; left: 520px; bottom: 62px;}
+
+ .f1 {
+    position: relative;
+    left: 300px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+}
+.f1:after{
+    content:'';
+    display: block;
+    clear:both;
+}
+.f2 {
+    float: left;
+}
+.f2 aaa {
+    padding-left: 30px;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 8px 10px;
+    text-decoration: none;
+}
+
+.footer p {text-align: left;}
+.footer img{float: left;  position: relative;left: 280px; top: 10px;}
+ .footer   div div{
+        display: inline-block;
+        border-bottom: none;
+        border-top: none;
+        font-size: 13px;
+        margin: 10px;
+        width: 280px;
+        height: 185px;
+    }
+    .b{
+        background-color: #FFFFFF;
+        
+        padding: 15px 20px;
+        font-size: 13px;
+
+        position: relative; left: 290px;
+       }
+
+
+</style>
+
+</head>
+<body>
+<center>
+<header class = "header">
+<p>
+<a class = "login" href="" style="text-decoration: none;">회원가입</a>
+<small>|</small>
+<a class = "login" href="" style="text-decoration: none;">로그인</a>
+<small>|</small>
+<a class = "login" href="" style="text-decoration: none;">장바구니</a>
+<small>|</small>
+<a class = "login" href="" style="text-decoration: none;">주문배송</a>
+<small>|</small>
+<a class = "login" href="" style="text-decoration: none;">고객센터</a>
+<small>|</small>
+<a class = "login" href="" style="text-decoration: none;">매장안내</a>
+<small>|</small>
+<a class = "login" href="" style="text-decoration: none;">Global</a>
+</p>
+</header>
+
+<a href= "page1.html"><img class="로고" src="사진/올리브영 로고.png" width = "248" height="42" align="left"></a>
+
+<div class="search">
+    <input type="text" placeholder="  네일DAY💛 단5일간 추가할인">
+    <button><img src="사진/search.png"></button>
+</div>
+    <div class="더보기메뉴">
+  <h5>관심매장소식 ▼  | 최근 본 상품 ▼</h5>
+    </div>
+
+<hr>
+
+<ul class = "category">
+    <li style="list-style:none;"><b><a class="카테고리" href="#카테고리">
+        <img src="사진/카테고리.png" width="20" height="20"> &nbsp;카테고리</a></b></li>
+    <li style="list-style:none;"><b><a href="#오특">오특</a></b></li>
+    <li><b><a href="#신상">신상</a></b></li>
+    <li><b><a href="page2.html">랭킹</a></b></li>
+    <li><b><a href="#프리미엄관">프리미엄관</a></b></li>
+    <li><b><a href="#오늘드림">오늘드림</a></b></li>
+    <li><b><a href="#기획전">기획전</a></b></li>
+    <li><b><a href="#세일">세일</a></b></li>
+    <li><b><a href="page4.html">기프트카드</a></b></li>
+    <li><b><a href="#멤버십/쿠폰">멤버십/쿠폰</a></b></li>
+    <li><b><a href="#이벤트">이벤트</a></b></li>
+</ul>
+<hr>
+<img src="./img/ggg1.png" width="1700">
+</center>
+
+<br><br>
+<h3 style="margin-left:350px; font-weight: 400;">전체<span style="color: red;">13</span>개</h3>
+<center>
+<br>
+<hr width=59% color="#D3D3D3" align="center" size=5/ >
+<br>
+<img src="./img/gg1.png"width="1000" height="600"><br>
+<img src="./img/gg2.png"width="1000" height="600"><br>
+</center>
+<br><br><br>
+
+<h3 style="margin-left:350px; font-weight: 900;">안내사항</h3>
+
+<br>
+<hr width=61% color="#D3D3D3" align="center" size=5; style="margin-left:350px;" >
+<br>
+
+<ul style="list-style-type: disc; color: #666666; margin-left:350px; line-height: 40px; font-size:15px;">
+<li>나의 기프트카드 관리 및 선물내역 확인은 <b><ins>[마이페이지>기프트카드] </ins></b>에서 확인 가능합니다.<br>
+<li>기프트카드의 유효기간은 5년이며, 유효기간 만료 전 3회에 걸쳐 이메일로 안내드립니다.<br>
+<li>구매 금액은 1회 최소 1만원 이상, 최대 50만원 이하로 구매 가능합니다. (카드당 50만원 한도, 1인당 500만원 한도)<br>
+<li>기프트카드 바로구매 시 자동 기명등록 처리되어 온라인몰에서 바로 사용 가능합니다.<br>
+<li>기프트카드 바로구매 시 아이디당 관리 기준 초과 시 MMS로 발송됩니다.<br>
+<li>바로구매한 기프트카드를 매장에서 사용하려면, [마이페이지>기프트카드>나의 기프트카드] 화면에서 카드 터치 시 결제 바코드로 바로 사용 가능합니다.<br>
+<li>선물 받으신 기프트카드를 매장에서 사용하려면,<br>
+문자로 받은 카드 이미지를 제시하시거나 온라인몰에 카드 등록 후 [마이페이지>기프트카드>나의 기프트카드] 화면에서 카드 터치 시 결제 바코드로 바로사용<br>가능합니다.
+<li>선물 받으신 기프트카드를 온라인몰에서 사용하려면, 카드 등록 후 바로 사용 가능합니다.
+<li>최초 등록된 카드는 주 카드로 설정됩니다.<br>
+<li>구매취소는 금액 미사용 시에만 가능하며,<br>
+구매일 기준 신용카드/계좌이체 결제수단은 14일 이내에 [마이페이지>기프트카드>나의 기프트카드] 메뉴 카드별 이용내역 상세 화면에서 취소 가능합니다.<br>
+<li>기프트카드 선물 거절 시 자동취소 됩니다.<br>
+<li>바로 구매한 경우 환불 신청은, 나이스정보통신 고객센터를 통해 환불 신청이 가능합니다.<br>
+선물 받으신 경우 환불 신청은, 선물받은 MMS 내용 내 카드등록 정보를 확인하여 나의 기프트카드>환불신청 화면을 통해 신청 가능합니다.<br>
+<li>기프트카드 잔액 60%이상 사용 시 환불 가능합니다. 1만원권 이하일 경우, 잔액 80%이상 사용 시 환불 가능합니다.<br>
+<li>기프트카드의 잔액 이동은 불가합니다.<br>
+<li>기프트카드 환불 시 완료 전까지 철회가 불가합니다.<br>
+<li>기프트카드 환불완료 후 카드 사용이 불가합니다.<br>
+<li>잔액이 있는 기프트카드의 유효기간 만료 시 잔액 환불은 불가합니다.<br>
+<li>기프트카드의 잔액이 있는 경우 카드삭제가 불가합니다. CJ ONE 고객센터를 통해 삭제 요청 가능합니다.<br>
+<li>기프트카드 분실 시 사용 중지가 가능하며, 이 후 사용중지 해지를 통해 재사용이 가능합니다.<br>
+<li>기프트카드 오프라인 매장 사용시 일부 매장 제외<br>
+<b><ins>사용불가 매장 확인하기 ></ins></b><br>
+<li>온/오프라인 기프트카드 결제 및 반품 시스템 오류 발생 시, 데이터 내부 조정으로 인한 거래 내역이 일부 상이한 현상이 발생할 수 있습니다.<br>
+(단, 고객님의 실질 거래 내용은 변함이 없습니다.)<br>
+<li>기프트카드 관련 문의사항<br>
+상담시간 : 09:00~18:00 (주말, 공휴일 휴무)<br>
+- 나이스정보통신 : 1644-9760<br>
+- CJ ONE 고객센터 : 1577-8888<br>
+- 올리브영 온라인몰 고객센터 : 1522-0882<br>
+</ul>
+
+
+<footer class="footer" style="margin-left:10px;">
+   <hr>
+    <ul class="f1">
+      <li class="f2"><aaa href="#news">회사소개  &nbsp; &nbsp;| </aaa></li>
+      <li class="f2"><aaa href="#contact">채용안내  &nbsp; &nbsp;| </aaa></li>
+      <li class="f2"><aaa href="#about">가맹점 개설문의  &nbsp; &nbsp;| </aaa></li>
+      <li class="f2"><aaa href="#about">상품입점 및 제휴문의  &nbsp; &nbsp;|</aaa></li>
+      <li class="f2"><aaa href="#about">사이버 감사실  &nbsp; &nbsp;| </aaa></li>
+      <li class="f2"><aaa href="#about">고객센터</aaa></li>
+    </ul>
+    <hr>
+    <img src="./img/o1.png" alt="image" width="200" height="200">
+<div style="background-color: white;">
+
+<center>
+<div style="margin-left:10px;">
+  <br><br>
+  <p><strong>씨제이올리브영 주식회사</strong></p>
+    <p>
+    대표이사 : 구창근 | 사업자등록번호 : 809-81-01574<br>
+    주소:(04323)서울특별시 용산구 한강대로 372, 24층<br> (동자동, ,KDB타워)<br>
+    호스팅사업자: CJ올리브네트윅스<br>
+    통신판매업신고번호 : 2019-서울용산-1428<br>
+    이메일 : oliveweb@cj.net<br>
+        <U>사업자 정보확인 ></U> <br></p>
+
+</div>
+<div><p>이용약관 법적고지</p>
+    <p><strong>개인정보처리방침</strong></p>
+    <p>청소년보호방침</p>
+    <p>영상전보처리기기운영/관리방침</p>
+    <p>이메일무단수집거부<br><br><br><br></p>
+</div>
+<div><p><strong>LG U+ 매매보호(에스크로)서비스</strong></p>
+    <p>
+    고객님은 안전거래를 위해 모든 결제시<br>
+    저희 쇼핑몰에서 가입한 LG U+ 전자 결제의<br>
+    매매보호(에스크로)서비스를 이용하실 수<br>
+    있습니다.<br>
+        <U>서비스 가입 사실 확인 ></U><br><br><br><br><br></p></div>
+<hr>
+
+  <span style="margin-top:20px;font-size:13px; margin-left:70px;" >&nbsp;정보보호 관리체계 ISMS 인증획득 | 인증범위 : 온라인 쇼핑몰 운영 (CJ올리브영) | 유효기간: 2020.12.02~2023.12.01 2017-2020 &nbsp;&nbsp;&nbsp;국가고객만족도(NCSI) 헬스앤뷰티전문점 업계 최초 4년 연속 1위</span>
+
+<hr>
+<p class="b"> Copyright &copy; CJ oliveYoung.All Rights Reserved.</p>
+</center>
+</footer>
+</body>
+</html>
+
